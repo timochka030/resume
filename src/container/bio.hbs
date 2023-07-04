@@ -1,0 +1,73 @@
+<div>
+    <div>
+        <h1>{{name}}</h1>
+        <h2>Day narodgennya</h2>
+        <h3>{{birthplace}}<br><em>{{birthdate}}</em></h3>
+
+        <h2>Death</h2>
+        <h3>{{deathplace}}<br><em>{{deathdate}}</em></h3>
+        <hr>
+        <p>Nationality:{{nationality}}</p>
+        <p>Byv v occupation:{{occupation}}</p>
+        <ul>
+            <h3>Known for:</h3>
+            {{#each known_for}}
+                <li>{{this}}</li>
+            {{/each}}
+            <hr>
+            <h3>Education</h3>
+            {{#each education}}
+                <li>{{degree}}</li>
+                <li>{{field}}</li>
+                <li>{{institution}}</li>
+                <li>{{year}}</li>
+            {{/each}}
+
+            <hr>
+
+            <h3>Notable publications</h3>
+            {{#each notable_publications}}
+                <li><h4>{{title}}</h4></li>
+                <li>{{publisher}}</li>
+                <li>{{year}}</li>
+            {{/each}}
+
+            <hr>
+            <h3>Partners</h3>
+            {{#each partners}}
+                <h4>{{name}}, {{relationship}} ({{years}})</h4>
+            {{/each}}
+
+            <hr>
+
+            {{#each awards}}
+                <h2>{{title}}</h2>
+                <h3>{{year}}</h3>
+                <p>{{description}}</p>
+            {{/each}}
+
+            <hr>
+
+            <li>{{influences}}</li><br>
+            <li>{{influenced}}</li><br>
+            <li>{{quotes}}</li><br>
+
+            <hr>
+
+            <h2>Major discoveries</h2>
+            {{#each major_discoveries}}
+                <h2>{{title}}</h2>
+                <h3>{{year}}</h3>
+                <p>{{description}}</p>
+            {{/each}}
+
+            <hr>
+            
+            {{#each contributions}}
+                <li><h3>{{this}}</h3></li>
+            {{/each}}
+
+            <hr>
+        </ul>
+    </div>
+</div>
