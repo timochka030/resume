@@ -1,0 +1,70 @@
+<div>
+    <h1 style="color: brown;">{{name}}</h1>
+    <h3>{{description}}</h3>
+    {{#with history}}
+        <p>{{year}} {{founder}}</p>
+        <hr>
+        {{#with ../types}}
+            <ul>
+                <h2>Types</h2>
+                <li>{{this}}</li>
+            </ul>
+            <hr>
+        {{/with}}
+            <ul>
+                <h2>Syntax</h2>
+                <li>{{../syntax/variables}}</li>
+                <li>{{../syntax/functions}}</li>
+                <li>{{../syntax/conditionals}}</li>
+                <li>{{../syntax/loops}}</li>
+                <li>{{../syntax/classes}}</li>
+            </ul>
+            <hr>
+    {{/with}}
+    <ul>
+        <li>
+            <h2>Features</h2>
+        </li>
+        <hr>
+        {{#each features}}
+            {{this}}
+            <br>
+            <hr>
+        {{/each}}
+    </ul>
+
+    <ul>
+        <li>
+            <h2>Libraries</h2>
+        </li>
+        <hr>
+        {{#each libraries}}
+            {{this}}
+            <br>
+            <hr>
+        {{/each}}
+    </ul>
+
+    <ul>
+        <li>
+            <h2>Tools</h2>
+        </li>
+        <hr>
+        {{#each tools}}
+            {{this}}
+            <br>
+            <hr>
+        {{/each}}
+    </ul>
+<hr>
+    <ul>
+        <li>
+            <h2>Community</h2>
+        </li>
+        <hr>
+        {{#each community}}
+            <h3>{{name}}</h3><h4>{{type}}</h4>
+            <hr>
+        {{/each}}
+    </ul>
+</div>

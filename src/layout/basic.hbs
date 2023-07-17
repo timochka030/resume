@@ -15,35 +15,14 @@
   </head>
 
   <body>
+
     {{> nav}}
 
-    {{#with header}}
-      <header>
-        <div>
-          <h1>{{name.firstname}} {{name.lastname}}</h1>
-        </div>
-
-        <div>
-          <h2>{{../footer/social/salary/text}}</h2>
-        </div>
-
-        <div>
-          <b>{{name.position}}</b>
-        </div>
-        <br>
-
-        
-
-        <br>
-        <hr>
-      </header>
-    {{/with}}
+    <br>
+    <hr>
 
     {{{body}}}
-    
+
+    {{> footer}}
   </body>
-
-  {{> footer}}
-
-
 </html>
