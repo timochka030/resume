@@ -1,0 +1,42 @@
+<div>
+    <h1 style="color: blue;">{{name}}</h1>
+    <div class="text-bg-primary p-3">Primary with contrasting color</div>
+    <hr><hr>
+    <center>
+        {{#each users}}
+                <h2>{{name}}</h2>
+                <h4>id: {{id}}</h4>
+                <h3>{{gender}}</h3>
+                <h2>age: {{age}}</h2>
+                <hr>
+                <h2>friends</h2>
+                {{#each friends}}
+                    <h3>{{name}}</h3>
+                    <h4>{{gender}}</h4>
+                    <h3>age: {{age}}</h3><hr>
+                    <h3>mutual_friends</h3>
+                    {{#each mutual_friends}}
+                        <h4>{{name}}</h4>
+                        <h6>id: {{id}}</h6>
+                        <h5>{{gender}}</h5>
+                        <h4>age: {{age}}</h4>
+                    {{/each}}
+                    <hr><hr>
+                {{/each}}
+                {{#each groups}}
+                    <h3>{{name}}</h3>
+                    <h6>description:</h6>
+                    <h5>{{description}}</h5>
+                    <hr>
+                    <h2>Members</h2>
+                    {{#each members}}
+                        <h3>{{name}}</h3>
+                        <h4>id: {{id}}</h4>
+                        <h3>{{gender}}</h3>
+                        <h3>age: {{age}}</h3>
+                    {{/each}}
+                {{/each}}
+        {{/each}}
+        <hr>
+    </center>
+</div>
