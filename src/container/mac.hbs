@@ -1,0 +1,95 @@
+<div>
+    <h1>{{name}}</h1>
+    <h3>{{description}}</h3>
+    <button disabled>price: {{price}}</button>
+    <hr>
+    <h4>category: {{category}}</h4>
+    
+    <hr><hr>
+
+    {{#with features}}
+        <h3>Features</h3>
+        <hr><hr>
+        <h4>info-processor</h4>
+        {{#each processor}}
+
+        <hr>
+
+            <ul>
+                <li>{{this}}</li>
+            </ul>
+        {{/each}}
+        <hr><hr>
+        <h3>info-memory</h3>
+        <hr>
+        {{#each memory}}
+            <ul>
+                <li>{{this}}</li>
+            </ul>
+            <hr>
+        {{/each}}
+<hr>
+        <h3>info-Storage</h3>
+        {{#each storage}}
+            <ul>
+                <li>{{this}}</li>
+            </ul>
+            <hr>
+        {{/each}}
+        <hr>
+        <h3>info-display</h3><hr>
+        {{#each display}}
+            <ul>
+                <li>{{this}}</li>
+            </ul><hr>
+        {{/each}}
+        <hr>
+
+        <h3>info-graphics</h3><hr>
+        {{#each graphics}}
+            <ul>
+                <li>{{this}}</li>
+            </ul>
+            <hr>
+        {{/each}}
+        <hr>
+        <h3>Ports</h3><hr>
+        {{#each ports}}
+            <ul>
+                <li>type: {{type}}</li><hr>
+                <li>count: {{count}}</li><hr>
+                <li>{{features}}</li><hr>
+            </ul>
+        {{/each}}
+<hr>
+        <h3>Battery</h3>
+        {{#each battery}}
+            <ul>
+                <li>{{this}}</li><hr>
+            </ul>
+        {{/each}}
+        <hr>
+
+        <h2>weight: {{weight}}</h2>
+        <hr><hr>
+
+        <h3>dimensions</h3><hr>
+        {{#with dimensions}}
+            <ul>
+                <li>height: {{height}},</li><hr>
+                <li>width: {{width}},</li><hr>
+                <li>depth: {{depth}},</li><hr>
+            </ul>
+        {{/with}}
+        <hr>
+
+        <h3>operating_system: {{operating_system}}</h3><hr><hr>
+
+        {{#each accessories}}
+            <button>
+                    <h5>{{name}}</h5>
+                    <h6>{{price}}</h6>
+            </button>
+        {{/each}}
+    {{/with}}
+</div>
