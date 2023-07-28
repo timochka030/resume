@@ -17,28 +17,23 @@
 			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
 
-  <body>
+  <body class="p-5">
     {{> nav}}
 
     {{#with header}}
       <header>
-        <div>
+        <div class="mb-2">
           <h1>{{name.firstname}} {{name.lastname}}</h1>
         </div>
 
-        <div>
+        <div class="mb-2">
           <h2>{{../footer/social/salary/text}}</h2>
         </div>
 
-        <div>
+        <div class="mb-2">
           <b>{{name.position}}</b>
         </div>
-        <br>
-
-        
-
-        <br>
-        <hr>
+        <hr class="my-2">
       </header>
     {{/with}}
 
