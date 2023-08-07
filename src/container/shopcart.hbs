@@ -12,50 +12,111 @@
 
     <hr class='my-5' />
 
-      {{#each goodsBlock}}
-        <div class="col-12 my-3">
+{{#each goodsBlock}}
+  <div class="card mb-3" style="max-width: 1000px;">
+    <div class="row g-0">
+      <div class="col-4 md-4">
+        <img src="{{image}}" class="card-img-top" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <div class="flex-column">
+            <h5 class="card-title">{{name}}</h5>
+            <p class="card-text">{{description}}</p>
+            {{#with price}}
+              <p class="card-text">{{title}}: {{value}}</p>
+            {{/with}}
+            <p class="card-text">{{amount}}</p>
+            {{#each buttons}}
+              <a href="#" class="btn {{#if isPrimary}}btn-primary{{/if}}{{#if isDanger}}btn-outline-danger{{/if}}">{{text}}</a>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/each}}
+<hr class="my-5">
+{{#with total}}
+  <h3>{{title}}</h3>
+  <div>{{amount}}</div>
+  <p class="card-text"><small class="text-body-secondary">{{delivery}}</small></p>
+  {{#each buttons}}
+    <div>
+      <a href="{{link}}" class='btn {{#if isSuccess}}btn-success col-4{{/if}}{{#if isOutline}}btn-outline-success col-3{{/if}} my-1'>{{text}}</a>
+    </div>
+  {{/each}}
+{{/with}}
+
+<hr class="my-3">
+
+{{#with goodsOtherBlock}}
+  <h1 class="text-center">{{title}}</h1>
+  {{#each cards}}
+        <div class='col-4'>
           <div class='card'>
-            <div class='card-body'>
-              <div>
-                <img
-                  height="110px";
-                  width="110px";
-                  src='{{image}}'
-                  alt='{{name}}'
-                />
-              </div>
+            <div>
+              <div class='card-body'>
+                <div class="my-2">
+                  <img src="{{image}}" class="card-img-top">
+                <h5 class='card-title'>{{title}}
+                  {{#unless isHot}}<span
+                      class='text-bg-success rounded-pill'
+                    >Hot!</span>{{/unless}}
 
-              <div class="col-3">
-                <div class='card-title'>{{name}}</div>
-              </div>
-
-              <div class="col-3">
+                  {{#unless isNew}}<span
+                      class='text-bg-danger rounded-pill'
+                    >Нове</span>{{/unless}}
+                </h5>
                 <p>{{description}}</p>
-              </div>
-
-              <div class="col-3">
-                {{#with price}}
-                  <div>{{title}}: {{value}}</div>
-                {{/with}}
-              </div>
-
-              <div class="col-3">
-                <div>{{amount}}</div>
-              </div>
-
-              <div class="col-3">
-                {{#each buttons}}
-                  <a href="#" class="btn {{#if isPrimary}}btn-primary{{/if}}{{#if isDanger}}btn-outline-danger{{/if}}">{{text}}</a>
-                {{/each}}
+                </div>
               </div>
             </div>
           </div>
         </div>
-
       {{/each}}
+{{/with}}
 
-      <hr>
+<hr class="my-5">
+    {{#with subscribe}}
+        <div class="col-12">
+          <div class="card text-bg-dark">
+            <div class="card-body">
+                <h2>{{header}}</h2>
+                <p>{{description}}</p>
+                {{#each buttons}}
+                  <div class="my-2"><a class="btn btn-primary" href="{{link}}">{{text}}</a></div>
+                {{/each}}
+            </div>
+          </div>
+        </div>
+    {{/with}}
+    <hr>
 
+    {{#each footer}}
+      <div class="col-12">
+         <div>
+           <div class='row  gx-2 gy-3'>
+              <div class="col-3">
+                
+                  <a class="btn btn-link" href="{{href}}">{{text}}</a><br><br>
+                
+              </div>
 
+              <div class="col-3">
+                
+                  <a class="btn btn-outline-dark" href="{{link}}">{{text}}</a><br><br>
+               
+              </div>
+
+              <div class="col-3">
+               
+                  <a class="btn btn-outline-info" href="{{link}}">{{text}}</a><br><br>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/each}}
   </div>
 </div>
