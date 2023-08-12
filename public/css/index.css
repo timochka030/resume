@@ -1,5 +1,11 @@
 html {
   max-width: 1000px;
+
+  background: rgb(255, 238, 0);
+}
+
+body {
+  background: rgb(255, 0, 0);
 }
 
 /* body {
